@@ -4,19 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RandomNumberGen : MonoBehaviour {
-
 	[SerializeField]private List<int> _ints = new List<int>();
 	[SerializeField]private List<TextMesh> _text = new List<TextMesh>();
 	[SerializeField]private TextMesh textInst;
 	[SerializeField]private int spawnAmount;
+	public List<TextMesh> getText {get{return _text;} set{_text = value;}}
 	private Vector3 _place;
 	int randomNumb;
-
-	void Update(){
-
-	}
-
-	void Start(){
+	void Awake(){
 		for (int i = 0; i < _ints.Count; i++) {
 			_ints [i] = i;
 		}
@@ -33,5 +28,4 @@ public class RandomNumberGen : MonoBehaviour {
 			_ints.RemoveAt (randomNumb);
 		}
 	}
-
 }
